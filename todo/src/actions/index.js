@@ -2,16 +2,16 @@ export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 
 
-export const addTodo = text => {
-    console.log('text', text);
+export const addTodo = newTodo => {
+    console.log('text', newTodo);
     return {
         type: ADD_TODO,
-        payload: text   
+        payload: newTodo   
     };
 }
 
 export const toggleTodo = index => {
-    console.log(index);
+    console.log('truthy', index);
     return {
         type: TOGGLE_TODO,
         payload: index

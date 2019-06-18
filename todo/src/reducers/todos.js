@@ -3,7 +3,8 @@ import { ADD_TODO, TOGGLE_TODO } from '../actions';
 const initialState = {
     todos: [
         { todo: 'Learn React', completed: false },
-        { todo: 'Learn Redux', completed: false }
+        { todo: 'Learn Redux', completed: false },
+        { todo: 'Watch Anime', completed: false }
     ]
 }
 
@@ -14,7 +15,7 @@ export const todos = (state = initialState, action) => {
             return {
                 ...state,
                 todos: [...state.todos, newTodo ]
-            }
+            };
             case TOGGLE_TODO:
                 return {
                     ...state,

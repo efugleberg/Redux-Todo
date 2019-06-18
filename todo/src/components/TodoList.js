@@ -28,13 +28,13 @@ class TodoList extends React.Component {
             <React.Fragment>
                 <div className = "to-dos">
                     {this.props.todos.map((todo, index) => (
-                        <h4 onClick={e => this.toggleTodo(e, index)} key={index}>
+                        <li onClick={e => this.toggleTodo(e, index)} key={index}>
                             {todo.todo}
                             {todo.completed}
-
-                        </h4>
+                        </li>
                     ))}
                 </div>
+                <form onSubmit={this.add}>
                 <input
                 type='text'
                 value={this.state.newTodo}
@@ -42,6 +42,7 @@ class TodoList extends React.Component {
                 placeholder="Add new Todo"
                 />
                 <button onClick={this.add}>Add Todo</button>
+                </form>
             </React.Fragment>
         )
     }
@@ -50,11 +51,11 @@ class TodoList extends React.Component {
 const mapStateToProps = state => {
     console.log(state)
     return {
-        todos: state.todos.todos
+        todos: state.todoList.todos
     };
 };
 
 export default connect(
     mapStateToProps,
-    {addTodo, toggleTodo}
+    { addTodo, toggleTodo }
 )(TodoList);
