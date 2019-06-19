@@ -24,6 +24,7 @@ class TodoList extends React.Component {
     }
 
     render() {
+        console.log('props', this.props.todos)
         return (
             <React.Fragment>
                 <div className = "to-dos">
